@@ -34,8 +34,7 @@ namespace RYoshiga.Demo.FunctionApp
             {
                 var requestBody = await streamReader.ReadToEndAsync();
                 dynamic data = JsonConvert.DeserializeObject(requestBody);
-                name = name ?? data?.name;
-                return name;
+                return data?.name;
             }
         }
     }
