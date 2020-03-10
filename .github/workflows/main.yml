@@ -52,10 +52,12 @@ jobs:
         login-server: ryoshiga.azurecr.io
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
-
-    - run: |
-      docker build . -t ryoshiga.azurecr.io/ryoshigademoapi:${{ github.sha }}
-      docker push ryoshiga.azurecr.io/ryoshigademoapi:${{ github.sha }} 
+    
+    - name: Build
+      run:  docker build . -t ryoshiga.azurecr.io/ryoshigademoapi:${{ github.sha }}
+    
+    - name: Publish
+      run:  docker push ryoshiga.azurecr.io/ryoshigademoapi:${{ github.sha }}
 
     - uses: azure/webapps-container-deploy@v1
       with:
@@ -63,5 +65,4 @@ jobs:
         images: 'ryoshiga.azurecr.io/ryoshigademoapi:${{ github.sha }}'
     
     - name: Azure logout
-      run: |
-        az logout
+      run: az logout
