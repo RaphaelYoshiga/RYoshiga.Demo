@@ -54,7 +54,7 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
     
     - name: Build
-      run:  cd RYoshiga.Demo.WebApi | docker build ./ -t ryoshiga.azurecr.io/ryoshigademoapi:${{ github.sha }}
+      run:  docker build ./RYoshiga.Demo.WebApi/ -t ryoshiga.azurecr.io/ryoshigademoapi:${{ github.sha }}
     
     - name: Publish
       run:  docker push ryoshiga.azurecr.io/ryoshigademoapi:${{ github.sha }}
