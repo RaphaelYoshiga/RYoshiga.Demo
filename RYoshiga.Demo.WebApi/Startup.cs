@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.QuickPulse;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +28,9 @@ namespace RYoshiga.Demo.WebApi
         {
             services.AddControllers();
             services.AddApplicationInsightsTelemetry();
+            var moduleAuthenticationApiKey = Environment.GetEnvironmentVariable("APP_INSIGHTS_API_KEY");
+
+            services.ConfigureTelemetryModule<QuickPulseTelemetryModule>((module, o) => module.AuthenticationApiKey = moduleAuthenticationApiKey);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

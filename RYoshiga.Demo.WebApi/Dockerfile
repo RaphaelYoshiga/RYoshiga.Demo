@@ -8,6 +8,9 @@ EXPOSE 443
 ARG instrumentation_key
 ENV APPINSIGHTS_INSTRUMENTATIONKEY=$instrumentation_key
 
+ARG app_insights_api_key
+ENV APP_INSIGHTS_API_KEY=$app_insights_api_key
+
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
 COPY ["RYoshiga.Demo.WebApi.csproj", ""]
