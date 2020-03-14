@@ -5,8 +5,8 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-ARG intrumentation_key
-ENV APPINSIGHTS_INSTRUMENTATIONKEY=$intrumentation_key
+ARG instrumentation_key
+ENV APPINSIGHTS_INSTRUMENTATIONKEY=$instrumentation_key
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
