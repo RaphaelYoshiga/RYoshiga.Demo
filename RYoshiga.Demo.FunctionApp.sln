@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RYoshiga.Demo.FunctionApp", "RYoshiga.Demo.FunctionApp\RYoshiga.Demo.FunctionApp.csproj", "{BA96FEC0-3181-4088-B7FF-AA17F72D56A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RYoshiga.Demo.WebApi", "RYoshiga.Demo.WebApi\RYoshiga.Demo.WebApi.csproj", "{CD79C225-1BE4-4330-81F9-5645314B88C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RYoshiga.Demo.WebApi", "RYoshiga.Demo.WebApi\RYoshiga.Demo.WebApi.csproj", "{CD79C225-1BE4-4330-81F9-5645314B88C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RYoshiga.Demo.UnitTests", "RYoshiga.Demo.UnitTests\RYoshiga.Demo.UnitTests.csproj", "{CC2D7632-1482-4D68-A8B6-E4E7A83CFAE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CD79C225-1BE4-4330-81F9-5645314B88C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD79C225-1BE4-4330-81F9-5645314B88C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD79C225-1BE4-4330-81F9-5645314B88C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC2D7632-1482-4D68-A8B6-E4E7A83CFAE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC2D7632-1482-4D68-A8B6-E4E7A83CFAE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC2D7632-1482-4D68-A8B6-E4E7A83CFAE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC2D7632-1482-4D68-A8B6-E4E7A83CFAE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
