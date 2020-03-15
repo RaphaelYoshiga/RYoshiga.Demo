@@ -39,6 +39,11 @@ jobs:
       run: |
         dotnet test ./RYoshiga.Demo.UnitTests/RYoshiga.Demo.UnitTests.csproj
         
+    - name: 'Run Specs tests'
+      shell: bash
+      run: |
+        dotnet test ./RYoshiga.Demo.Specs/RYoshiga.Demo.Specs.csproj
+
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
       id: fa
