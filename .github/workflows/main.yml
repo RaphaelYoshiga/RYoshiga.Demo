@@ -37,7 +37,7 @@ jobs:
     - name: 'Run Unit tests'
       shell: bash
       run: |
-       dotnet test .\RYoshiga.Demo.UnitTests\RYoshiga.Demo.UnitTests.csproj
+        dotnet test ./RYoshiga.Demo.UnitTests/RYoshiga.Demo.UnitTests.csproj
         
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
