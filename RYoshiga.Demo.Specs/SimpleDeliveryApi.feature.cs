@@ -40,8 +40,8 @@ namespace RYoshiga.Demo.Specs
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SimpleDeliveryApi", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
-                    "f two numbers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SimpleDeliveryApi", "\tIn order to know what delivery options I have for my order\r\n\tAs a customer\r\n\tI w" +
+                    "ant to be shown delivery options", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,15 +81,15 @@ namespace RYoshiga.Demo.Specs
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Add two numbers")]
+        [Xunit.SkippableFactAttribute(DisplayName="Simple delivery options")]
         [Xunit.TraitAttribute("FeatureTitle", "SimpleDeliveryApi")]
-        [Xunit.TraitAttribute("Description", "Add two numbers")]
+        [Xunit.TraitAttribute("Description", "Simple delivery options")]
         [Xunit.TraitAttribute("Category", "mytag")]
-        public virtual void AddTwoNumbers()
+        public virtual void SimpleDeliveryOptions()
         {
             string[] tagsOfScenario = new string[] {
                     "mytag"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Simple delivery options", null, new string[] {
                         "mytag"});
 #line 7
 this.ScenarioInitialize(scenarioInfo);
@@ -111,17 +111,44 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
+                            "Price",
+                            "DaysToDispatch",
+                            "DaysToDeliver"});
+                table1.AddRow(new string[] {
+                            "Standard Delivery",
+                            "3.00",
+                            "2",
+                            "2"});
+                table1.AddRow(new string[] {
+                            "Next Day Delivery",
+                            "3.00",
+                            "0",
+                            "0"});
 #line 8
- testRunner.Given("I have entered 50 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have those delivery options for country code GB", ((string)(null)), table1, "Given ");
 #line hidden
-#line 9
- testRunner.And("I have entered 70 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+ testRunner.And("the time is 01/01/2020 20:00", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 10
- testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 13
+ testRunner.When("I ask for delivery options for GB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 11
- testRunner.Then("the result should be 120 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
+                            "Price",
+                            "DeliveryDate"});
+                table2.AddRow(new string[] {
+                            "Standard Delivery",
+                            "3.00",
+                            "05/01/2020"});
+                table2.AddRow(new string[] {
+                            "Next Day Delivery",
+                            "3.00",
+                            "02/01/2020"});
+#line 14
+ testRunner.Then("I get those delivery options", ((string)(null)), table2, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

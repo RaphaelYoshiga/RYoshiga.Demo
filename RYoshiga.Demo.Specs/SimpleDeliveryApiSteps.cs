@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using RYoshiga.Demo.WebApi.Controllers;
 using TechTalk.SpecFlow;
 
 namespace RYoshiga.Demo.Specs
@@ -6,19 +9,37 @@ namespace RYoshiga.Demo.Specs
     [Binding]
     public class SimpleDeliveryApiSteps
     {
-        [Given(@"I have entered (.*) into the calculator")]
-        public void GivenIHaveEnteredIntoTheCalculator(int p0)
+        public SimpleDeliveryApiSteps()
         {
         }
-        
-        [When(@"I press add")]
-        public void WhenIPressAdd()
+
+        [Given(@"I have those delivery options for country code")]
+        public void GivenIHaveThoseDeliveryOptionsForCountryCode(Table table)
         {
+            ScenarioContext.Current.Pending();
         }
-        
-        [Then(@"the result should be (.*) on the screen")]
-        public void ThenTheResultShouldBeOnTheScreen(int p0)
+
+        [Given(@"the time is (.*)")]
+        public void GivenTheTimeIs(string dateTime)
         {
+            ScenarioContext.Current.Pending();
+        }
+
+        [When(@"I ask for delivery options for (.*)")]
+        public async Task WhenIAskForDeliveryOptionsFor(string countryCode)
+        {
+            var hostBuilder = new WebApiSpecHostBuilder();
+            var host = hostBuilder.Build();
+
+            var deliveryOptionsController = (DeliveryOptionsController)host.Services.GetRequiredService(typeof(DeliveryOptionsController));
+
+            await deliveryOptionsController.GetFor(countryCode);
+        }
+
+        [Then(@"I get those delivery options")]
+        public void ThenIGetThoseDeliveryOptions(Table table)
+        {
+            ScenarioContext.Current.Pending();
         }
     }
 }
