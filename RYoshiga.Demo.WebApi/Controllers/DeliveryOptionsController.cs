@@ -8,9 +8,11 @@ namespace RYoshiga.Demo.WebApi.Controllers
 {
     public class DeliveryOptionsController : Controller
     {
-        public Task<ActionResult> GetFor(string countryCode)
+        public async Task<ActionResult> GetFor(string countryCode)
         {
-            throw new NotImplementedException();
+            await Task.CompletedTask;
+
+            return Ok();
         }
     }
 }

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Moq;
 using RYoshiga.Demo.WebApi;
 using RYoshiga.Demo.WebApi.Controllers;
 
@@ -50,6 +51,8 @@ namespace RYoshiga.Demo.Specs
 
         private void OverrideServices(IServiceCollection services)
         {
+            services.AddSingleton(Mock.Of<Microsoft.AspNetCore.Hosting.IHostingEnvironment>());
+            
             foreach (var overrideAction in _overrideActions)
             {
                 overrideAction(services);

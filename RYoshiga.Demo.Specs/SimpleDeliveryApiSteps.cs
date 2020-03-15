@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Globalization;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
+using Moq;
+using RYoshiga.Demo.Domain;
 using RYoshiga.Demo.WebApi.Controllers;
 using TechTalk.SpecFlow;
 
@@ -9,20 +12,23 @@ namespace RYoshiga.Demo.Specs
     [Binding]
     public class SimpleDeliveryApiSteps
     {
+        private readonly Mock<IClock> _clockMock;
         public SimpleDeliveryApiSteps()
         {
+            _clockMock = new Mock<IClock>();
         }
 
-        [Given(@"I have those delivery options for country code")]
-        public void GivenIHaveThoseDeliveryOptionsForCountryCode(Table table)
+        [Given(@"I have those delivery options for country code (.*)")]
+        public void GivenIHaveThoseDeliveryOptionsForCountryCode(string countryCode, Table table)
         {
-            ScenarioContext.Current.Pending();
         }
 
         [Given(@"the time is (.*)")]
         public void GivenTheTimeIs(string dateTime)
         {
-            ScenarioContext.Current.Pending();
+            var now = DateTime.ParseExact(dateTime, "dd/MM/yyyy HH:mm", CultureInfo.InvariantCulture);
+            _clockMock.SetupGet(p => p.UtcNow)
+                .Returns(now);
         }
 
         [When(@"I ask for delivery options for (.*)")]
@@ -39,7 +45,6 @@ namespace RYoshiga.Demo.Specs
         [Then(@"I get those delivery options")]
         public void ThenIGetThoseDeliveryOptions(Table table)
         {
-            ScenarioContext.Current.Pending();
         }
     }
 }
