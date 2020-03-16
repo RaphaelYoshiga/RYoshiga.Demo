@@ -5,6 +5,8 @@
     <UserSecretsId>b5f0207b-5c72-425c-bf4a-1c6ad4785b8a</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <ApplicationInsightsResourceId>/subscriptions/b8af2c69-638a-43ea-a0ee-2725c0edb7f3/resourcegroups/ryoshiga-demo/providers/microsoft.insights/components/ryoshiga-demo-insights</ApplicationInsightsResourceId>
+    <DockerfileContext>.</DockerfileContext>
+    <DockerfileFile>..\Dockerfile</DockerfileFile>
   </PropertyGroup>
 
   <ItemGroup>
