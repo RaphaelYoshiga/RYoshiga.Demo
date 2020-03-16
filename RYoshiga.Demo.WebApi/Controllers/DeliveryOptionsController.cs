@@ -19,6 +19,7 @@ namespace RYoshiga.Demo.WebApi.Controllers
             _rawDeliveryOptionsProvider = rawDeliveryOptionsProvider;
         }
 
+        [Route("{controller}/{countryCode}")]
         public async Task<ActionResult> GetFor(string countryCode)
         {
             var rawDeliveryOptions = await _rawDeliveryOptionsProvider.FetchBy(countryCode);

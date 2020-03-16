@@ -11,12 +11,19 @@ namespace RYoshiga.Demo.Domain
         {
             IEnumerable<RawDeliveryOption> rawDeliveryOptions = new List<RawDeliveryOption>()
             {
-                new RawDeliveryOption()
+                new RawDeliveryOption
                 {
+                    DaysToDispatch = 0,
                     DaysToDeliver = 1,
-                    DaysToDispatch = 1,
                     Name = "Next Day Delivery",
-                    Price = 5
+                    Price = 10
+                },
+                new RawDeliveryOption
+                {
+                    DaysToDispatch = 2,
+                    DaysToDeliver = 2,
+                    Name = "Standard Delivery",
+                    Price = 2
                 }
             };
             return Task.FromResult(rawDeliveryOptions);
