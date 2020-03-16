@@ -30,6 +30,8 @@ namespace RYoshiga.Demo.WebApi
             services.AddApplicationInsightsTelemetry();
             var moduleAuthenticationApiKey = Environment.GetEnvironmentVariable("APP_INSIGHTS_API_KEY");
 
+            Ioc.RegisterServices(services);
+
             services.ConfigureTelemetryModule<QuickPulseTelemetryModule>((module, o) => module.AuthenticationApiKey = moduleAuthenticationApiKey);
         }
 

@@ -22,7 +22,7 @@ namespace RYoshiga.Demo.WebApi.Controllers
         public async Task<ActionResult> GetFor(string countryCode)
         {
             var rawDeliveryOptions = await _rawDeliveryOptionsProvider.FetchBy(countryCode);
-            var deliveryOptions = _deliveryOptionsResponseMapper.MapFrom(rawDeliveryOptions);
+            var deliveryOptions = _deliveryOptionsResponseMapper.MapFrom(rawDeliveryOptions).ToList();
             return Ok(deliveryOptions);
         }
     }

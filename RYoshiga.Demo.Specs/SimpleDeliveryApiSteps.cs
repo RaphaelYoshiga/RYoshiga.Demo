@@ -51,12 +51,13 @@ namespace RYoshiga.Demo.Specs
             _actionResult = await deliveryOptionsController.GetFor(countryCode);
         }
 
-        private static DeliveryOptionsController GetController()
+        private DeliveryOptionsController GetController()
         {
             var hostBuilder = new WebApiSpecHostBuilder();
+            hostBuilder.AddInstance(_rawDeliveryOptionProvider.Object);
             var host = hostBuilder.Build();
 
-            return (DeliveryOptionsController) host.Services.GetRequiredService(typeof(DeliveryOptionsController));
+            return (DeliveryOptionsController)host.Services.GetRequiredService(typeof(DeliveryOptionsController));
         }
 
         [Then(@"I get those delivery options")]
