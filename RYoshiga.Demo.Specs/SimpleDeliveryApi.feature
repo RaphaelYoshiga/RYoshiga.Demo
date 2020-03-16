@@ -14,3 +14,13 @@ Scenario: Simple delivery options
 		| Name              | Price | DeliveryDate |
 		| Standard Delivery | 3.00  | 05/01/2020   |
 		| Next Day Delivery | 3.00  | 02/01/2020   |
+
+Scenario: Delivery options for France
+	Given I have those delivery options for country code FR
+		| Name                   | Price | DaysToDispatch | DaysToDeliver |
+		| International Delivery | 7.00  | 0              | 4             |
+	And the time is 01/01/2020 20:00
+	When I ask for delivery options for FR
+	Then I get those delivery options
+		| Name                   | Price | DeliveryDate |
+		| International Delivery | 7.00  | 05/01/2020   |
