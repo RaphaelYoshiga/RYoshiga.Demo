@@ -7,7 +7,7 @@ Scenario: Simple delivery options
 	Given I have those delivery options for country code GB
 		| Name              | Price | DaysToDispatch | DaysToDeliver |
 		| Standard Delivery | 3.00  | 2              | 2             |
-		| Next Day Delivery | 3.00  | 0              | 0             |
+		| Next Day Delivery | 3.00  | 0              | 1             |
 	And the time is 01/01/2020 20:00
 	When I ask for delivery options for GB
 	Then I get those delivery options

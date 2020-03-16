@@ -122,7 +122,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Next Day Delivery",
                             "3.00",
                             "0",
-                            "0"});
+                            "1"});
 #line 7
  testRunner.Given("I have those delivery options for country code GB", ((string)(null)), table1, "Given ");
 #line hidden

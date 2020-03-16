@@ -10,6 +10,7 @@ namespace RYoshiga.Demo.WebApi
             services.AddSingleton<IDeliveryEstimator, DeliveryEstimator>();
             services.AddSingleton<IRawDeliveryOptionsProvider, InMemoryDeliveryOptionsProvider>();
             services.AddSingleton<IDeliveryOptionsResponseMapper, DeliveryOptionsResponseMapper>();
+            services.AddSingleton<IClock, Clock>();
         }
     }
 

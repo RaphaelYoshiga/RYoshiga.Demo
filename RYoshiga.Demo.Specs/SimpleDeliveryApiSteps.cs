@@ -55,6 +55,7 @@ namespace RYoshiga.Demo.Specs
         {
             var hostBuilder = new WebApiSpecHostBuilder();
             hostBuilder.AddInstance(_rawDeliveryOptionProvider.Object);
+            hostBuilder.AddInstance(_clockMock.Object);
             var host = hostBuilder.Build();
 
             return (DeliveryOptionsController)host.Services.GetRequiredService(typeof(DeliveryOptionsController));

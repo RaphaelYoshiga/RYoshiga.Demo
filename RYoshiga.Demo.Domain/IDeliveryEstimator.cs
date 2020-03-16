@@ -9,9 +9,18 @@ namespace RYoshiga.Demo.Domain
 
     public class DeliveryEstimator : IDeliveryEstimator
     {
+        private IClock _clock;
+
+        public DeliveryEstimator(IClock clock)
+        {
+            _clock = clock;
+        }
+
         public DateTime EstimateDeliveryFor(RawDeliveryOption rawDeliveryOptions)
         {
-            return DateTime.Now;
+            return _clock.UtcNow
+                .AddDays(rawDeliveryOptions.DaysToDispatch)
+                .AddDays(rawDeliveryOptions.DaysToDeliver).Date;
         }
     }
 }
