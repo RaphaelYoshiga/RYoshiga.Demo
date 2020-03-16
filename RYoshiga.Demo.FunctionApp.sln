@@ -7,11 +7,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RYoshiga.Demo.FunctionApp",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RYoshiga.Demo.WebApi", "RYoshiga.Demo.WebApi\RYoshiga.Demo.WebApi.csproj", "{CD79C225-1BE4-4330-81F9-5645314B88C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RYoshiga.Demo.UnitTests", "RYoshiga.Demo.UnitTests\RYoshiga.Demo.UnitTests.csproj", "{CC2D7632-1482-4D68-A8B6-E4E7A83CFAE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RYoshiga.Demo.UnitTests", "RYoshiga.Demo.UnitTests\RYoshiga.Demo.UnitTests.csproj", "{CC2D7632-1482-4D68-A8B6-E4E7A83CFAE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RYoshiga.Demo.Specs", "RYoshiga.Demo.Specs\RYoshiga.Demo.Specs.csproj", "{603BCE94-DDB9-4DDB-A8C3-98C09794A756}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RYoshiga.Demo.Specs", "RYoshiga.Demo.Specs\RYoshiga.Demo.Specs.csproj", "{603BCE94-DDB9-4DDB-A8C3-98C09794A756}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RYoshiga.Demo.Domain", "RYoshiga.Demo.Domain\RYoshiga.Demo.Domain.csproj", "{5F589092-EA10-4F3D-A33B-40A9A5A652AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RYoshiga.Demo.Domain", "RYoshiga.Demo.Domain\RYoshiga.Demo.Domain.csproj", "{5F589092-EA10-4F3D-A33B-40A9A5A652AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D2AC54BC-019B-44AD-A01B-CCDFB4A8654D}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
