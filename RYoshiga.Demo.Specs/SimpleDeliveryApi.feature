@@ -3,7 +3,6 @@
 	As a customer
 	I want to be shown delivery options
 
-@mytag
 Scenario: Simple delivery options
 	Given I have those delivery options for country code GB
 		| Name              | Price | DaysToDispatch | DaysToDeliver |

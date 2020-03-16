@@ -84,14 +84,11 @@ namespace RYoshiga.Demo.Specs
         [Xunit.SkippableFactAttribute(DisplayName="Simple delivery options")]
         [Xunit.TraitAttribute("FeatureTitle", "SimpleDeliveryApi")]
         [Xunit.TraitAttribute("Description", "Simple delivery options")]
-        [Xunit.TraitAttribute("Category", "mytag")]
         public virtual void SimpleDeliveryOptions()
         {
-            string[] tagsOfScenario = new string[] {
-                    "mytag"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Simple delivery options", null, new string[] {
-                        "mytag"});
-#line 7
+            string[] tagsOfScenario = ((string[])(null));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Simple delivery options", null, ((string[])(null)));
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -126,13 +123,13 @@ this.ScenarioInitialize(scenarioInfo);
                             "3.00",
                             "0",
                             "0"});
-#line 8
+#line 7
  testRunner.Given("I have those delivery options for country code GB", ((string)(null)), table1, "Given ");
 #line hidden
-#line 12
+#line 11
  testRunner.And("the time is 01/01/2020 20:00", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 13
+#line 12
  testRunner.When("I ask for delivery options for GB", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -147,7 +144,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "Next Day Delivery",
                             "3.00",
                             "02/01/2020"});
-#line 14
+#line 13
  testRunner.Then("I get those delivery options", ((string)(null)), table2, "Then ");
 #line hidden
             }
