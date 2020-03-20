@@ -1,0 +1,42 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sites_ryoshiga_name": {
+            "value": "ryoshiga"
+        },
+        "sites_ryoshiga_demo_api_name": {
+            "value": "ryoshiga-demo-api"
+        },
+        "components_ryoshiga_name": {
+            "value": "ryoshiga"
+        },
+        "serverfarms_ryoshiga_plan_name": {
+            "value": "ryoshiga-plan"
+        },
+        "registries_ryoshiga_name": {
+            "value": "ryoshiga"
+        },
+        "serverfarms_ASP_ryoshigademo_9051_name": {
+            "value": "ASP-ryoshigademo-9051"
+        },
+        "components_ryoshiga_demo_insights_name": {
+            "value": "ryoshiga-demo-insights"
+        },
+        "storageAccounts_storageaccountryosh8845_name": {
+            "value": "storageaccountryosh8845"
+        },
+        "actionGroups_Application_Insights_Smart_Detection_name": {
+            "value": "Application Insights Smart Detection"
+        },
+        "smartdetectoralertrules_failure_anomalies___ryoshiga_name": {
+            "value": "failure anomalies - ryoshiga"
+        },
+        "smartdetectoralertrules_failure_anomalies___ryoshiga_demo_insights_name": {
+            "value": "failure anomalies - ryoshiga-demo-insights"
+        },
+        "actiongroups_application_20insights_20smart_20detection_externalid": {
+            "value": "/subscriptions/b8af2c69-638a-43ea-a0ee-2725c0edb7f3/resourceGroups/ryoshiga-demo/providers/microsoft.insights/actiongroups/application%20insights%20smart%20detection"
+        }
+    }
+}
