@@ -4,7 +4,7 @@ $resourceGroup = "ryoshiga-demo"
 Import-Module AzureRM.Resources
 
 #  login, you can comment so it stops asking for your credentials
-#Login-AzureRmAccount
+Login-AzureRmAccount
 
 $scriptDir = Split-Path $MyInvocation.MyCommand.Path
 
