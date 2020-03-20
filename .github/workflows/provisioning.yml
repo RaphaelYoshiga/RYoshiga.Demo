@@ -7,6 +7,8 @@ name: Provisioning
 on:
   push:
     branches: [ master ]
+    paths:
+    - './Provisioning/**'
   pull_request:
     branches: [ master ]
 
@@ -32,6 +34,9 @@ jobs:
     
     - name: Test template
       run:  az deployment group validate --resource-group ryoshiga-demo --template-file ./Provisioning/template.json --parameters ./Provisioning/parameters.json
+    
+    - name: Deploy template
+      run:  az deployment group create --resource-group ryoshiga-demo --template-file ./Provisioning/template.json --parameters ./Provisioning/parameters.json
 
     - name: Azure logout
       run: az logout
