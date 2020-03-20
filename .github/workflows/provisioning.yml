@@ -7,8 +7,8 @@ name: Provisioning
 on:
   push:
     branches: [ master ]
-    # paths:
-    # - 'Provisioning/**'
+    paths:
+    - 'Provisioning/**'
   pull_request:
     branches: [ master ]
 
