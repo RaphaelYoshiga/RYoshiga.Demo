@@ -13,6 +13,7 @@ namespace RYoshiga.Demo.SmokeTests
         public ConfigurationProvider()
         {
             string hostingEnvironment = _environmentVariable ?? "Development";
+            Console.WriteLine($"Running with hosting: {hostingEnvironment}");
 
             _configurationBuilder = new ConfigurationBuilder()
                 .AddJsonFile("smokeTestSettings.json", optional: true, reloadOnChange: true)
