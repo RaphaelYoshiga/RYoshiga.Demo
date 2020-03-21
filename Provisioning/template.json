@@ -176,10 +176,10 @@
             "name": "[parameters('serverfarms_ryoshiga_plan_name')]",
             "location": "UK South",
             "sku": {
-                "name": "B1",
-                "tier": "Basic",
-                "size": "B1",
-                "family": "B",
+                "name": "S1",
+                "tier": "Standard",
+                "size": "S1",
+                "family": "S",
                 "capacity": 1
             },
             "kind": "linux",
@@ -468,7 +468,6 @@
                     "hostingstart.html"
                 ],
                 "netFrameworkVersion": "v4.0",
-                "linuxFxVersion": "DOCKER|ryoshiga.azurecr.io/ryoshigademoapi:b3436bf1521a7caadd7097ebfa435d13c3f227ff",
                 "requestTracingEnabled": false,
                 "remoteDebuggingEnabled": false,
                 "remoteDebuggingVersion": "VS2019",
