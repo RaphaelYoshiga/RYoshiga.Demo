@@ -73,6 +73,7 @@ jobs:
       with:
         app-name: 'ryoshiga-demo-api'
         images: 'ryoshiga.azurecr.io/ryoshigademoapi:${{ github.sha }}'
+        slot-name: 'staging'
     
     - name: Azure logout
       run: az logout
