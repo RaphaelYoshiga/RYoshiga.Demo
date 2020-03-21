@@ -44,14 +44,6 @@ jobs:
       run: |
         dotnet test ./RYoshiga.Demo.Specs/RYoshiga.Demo.Specs.csproj
 
-    - name: 'Run Azure Functions Action'
-      uses: Azure/functions-action@v1
-      id: fa
-      with:
-        app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-        package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
-        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
-
     - name: 'Login via Azure CLI'
       uses: azure/login@v1
       with:
@@ -75,5 +67,18 @@ jobs:
         images: 'ryoshiga.azurecr.io/ryoshigademoapi:${{ github.sha }}'
         slot-name: 'staging'
     
+    - name: 'Swap slots'
+      shell: bash
+      run: |
+       az webapp deployment slot swap  -g ryoshiga-demo -n ryoshiga-demo-api --slot staging --target-slot production
+
     - name: Azure logout
       run: az logout
+
+    - name: 'Run Azure Functions Action'
+      uses: Azure/functions-action@v1
+      id: fa
+      with:
+        app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
+        package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
