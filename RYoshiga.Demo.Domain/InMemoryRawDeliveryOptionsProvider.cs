@@ -38,9 +38,9 @@ namespace RYoshiga.Demo.Domain
                 }
             },
         };
+
         public Task<IEnumerable<RawDeliveryOption>> FetchBy(string countryCode)
         {
-
             return Task.FromResult(RawDeliveryOptions[countryCode].AsEnumerable());
         }
     }
