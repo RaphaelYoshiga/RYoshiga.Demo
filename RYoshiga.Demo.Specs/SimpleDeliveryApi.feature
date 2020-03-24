@@ -20,7 +20,7 @@ Scenario: Delivery options for France
 		| Name                   | Price | DaysToDispatch | DaysToDeliver |
 		| International Delivery | 7.00  | 0              | 4             |
 	And the time is 01/01/2020 20:00
-	When I ask for delivery options for FR
+	When I ask for delivery options for fr
 	Then I get those delivery options
 		| Name                   | Price | DeliveryDate |
 		| International Delivery | 7.00  | 05/01/2020   |

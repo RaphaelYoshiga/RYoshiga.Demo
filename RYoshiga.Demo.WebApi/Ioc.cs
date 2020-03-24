@@ -8,7 +8,7 @@ namespace RYoshiga.Demo.WebApi
         public static void RegisterServices(IServiceCollection services)
         {
             services.AddSingleton<IDeliveryEstimator, DeliveryEstimator>();
-            services.AddSingleton<IRawDeliveryOptionsProvider, InMemoryDeliveryOptionsProvider>();
+            services.AddSingleton<IRawDeliveryOptionsProvider, InMemoryRawDeliveryOptionsProvider>();
             services.AddSingleton<IDeliveryOptionsResponseMapper, DeliveryOptionsResponseMapper>();
             services.AddSingleton<IClock, Clock>();
         }

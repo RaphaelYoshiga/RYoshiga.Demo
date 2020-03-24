@@ -40,6 +40,19 @@ namespace RYoshiga.Demo.UnitTests
 
             ((OkObjectResult)deliveryOptions).Value.ShouldBe(expectedDeliveryOptions);
         }
+
+        [Theory]
+        [InlineData("gb", "GB")]
+        [InlineData("fr", "FR")]
+        public async Task CallDeliveryOptionsFetcherWithUpperedCountryCode(string countryCode, string expectedCountryCode)
+        {
+            _rawDeliveryOptionsProviderMock.Setup(p => p.FetchBy(expectedCountryCode))
+                .ReturnsAsync(new List<RawDeliveryOption>());
+
+            var deliveryOptions = await _controller.GetFor(countryCode);
+
+            _rawDeliveryOptionsProviderMock.Verify(p => p.FetchBy(expectedCountryCode));
+        }
     }
 
 

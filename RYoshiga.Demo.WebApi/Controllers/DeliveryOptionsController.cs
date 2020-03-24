@@ -22,7 +22,8 @@ namespace RYoshiga.Demo.WebApi.Controllers
         [Route("{controller}/{countryCode}")]
         public async Task<ActionResult> GetFor(string countryCode)
         {
-            var rawDeliveryOptions = await _rawDeliveryOptionsProvider.FetchBy(countryCode);
+            var upperedCountryCode = countryCode.ToUpper();
+            var rawDeliveryOptions = await _rawDeliveryOptionsProvider.FetchBy(upperedCountryCode);
             var deliveryOptions = _deliveryOptionsResponseMapper.MapFrom(rawDeliveryOptions).ToList();
             return Ok(deliveryOptions);
         }
