@@ -7,6 +7,5 @@ namespace RYoshiga.Demo.Domain
         public string Name { get; set; }
         public decimal Price { get; set; }
         public DateTime DeliveryDate { get; set; }
-        public string Description => "Wow, that deployment was fast!";
     }
 }
