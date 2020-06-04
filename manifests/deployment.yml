@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "azureakspoc"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "azureakspoc"
+    spec:
+      containers:
+        - name: "azureakspoc"
+          image: "ryoshiga.azurecr.io/azureakspoc"
+          ports:
+          - containerPort: 80
