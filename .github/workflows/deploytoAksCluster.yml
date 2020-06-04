@@ -32,7 +32,7 @@ jobs:
 
     - uses: azure/k8s-create-secret@v1
       with:
-        namespace: ryoshigademoapib57d
+        namespace: default
         container-registry-url: ryoshiga.azurecr.io
         container-registry-username: ${{ secrets.acr_ryoshiga_username }}
         container-registry-password: ${{ secrets.acr_ryoshiga_password }}
