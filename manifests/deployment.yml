@@ -1,16 +1,16 @@
 apiVersion : apps/v1beta1
 kind: Deployment
 metadata:
-  name: "azureakspoc"
+  name: "ryoshigademoapi"
 spec:
   replicas: 2
   template:
     metadata:
       labels:
-        app: "azureakspoc"
+        app: "ryoshigademoapi"
     spec:
       containers:
-        - name: "azureakspoc"
-          image: "ryoshiga.azurecr.io/azureakspoc"
+        - name: "ryoshigademoapi:"
+          image: "ryoshiga.azurecr.io/ryoshigademoapi"
           ports:
           - containerPort: 80
