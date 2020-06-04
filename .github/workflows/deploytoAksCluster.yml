@@ -24,15 +24,15 @@ jobs:
     
     - name: Create namespace
       run: |
-        namespacePresent=`kubectl get namespace | grep ryoshigademoapi | wc -l`
+        namespacePresent=`kubectl get namespace | grep ryoshigademoapib57d | wc -l`
         if [ $namespacePresent -eq 0 ]
         then
-            echo `kubectl create namespace ryoshigademoapi`
+            echo `kubectl create namespace ryoshigademoapib57d`
         fi
 
     - uses: azure/k8s-create-secret@v1
       with:
-        namespace: ryoshigademoapi
+        namespace: ryoshigademoapib57d
         container-registry-url: ryoshiga.azurecr.io
         container-registry-username: ${{ secrets.acr_ryoshiga_username }}
         container-registry-password: ${{ secrets.acr_ryoshiga_password }}
@@ -40,7 +40,7 @@ jobs:
        
     - uses: azure/k8s-deploy@v1
       with:
-        namespace: ryoshigademoapi
+        namespace: ryoshigademoapib57d
         manifests: |
           manifests/deployment.yml
           manifests/service.yml
