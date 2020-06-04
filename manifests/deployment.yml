@@ -10,7 +10,7 @@ spec:
         app: "ryoshigademoapi"
     spec:
       containers:
-        - name: "ryoshigademoapi:"
+        - name: "ryoshigademoapi"
           image: "ryoshiga.azurecr.io/ryoshigademoapi"
           ports:
           - containerPort: 80
