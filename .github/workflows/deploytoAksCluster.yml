@@ -14,8 +14,8 @@ jobs:
     - name: Build and push image to ACR
       id: build-image
       run: |
-        docker build "$GITHUB_WORKSPACE/" -f  "Dockerfile" -t ryoshiga.azurecr.io/azureakspoc:${{ github.sha }}
-        docker push ryoshiga.azurecr.io/azureakspoc:${{ github.sha }}
+        docker build "$GITHUB_WORKSPACE/" -f  "Dockerfile" -t ryoshiga.azurecr.io/ryoshigademoapi:${{ github.sha }}
+        docker push ryoshiga.azurecr.io/ryoshigademoapi:${{ github.sha }}
     
     - uses: azure/k8s-set-context@v1
       with:
@@ -24,15 +24,15 @@ jobs:
     
     - name: Create namespace
       run: |
-        namespacePresent=`kubectl get namespace | grep azureakspocb57d | wc -l`
+        namespacePresent=`kubectl get namespace | grep ryoshigademoapi | wc -l`
         if [ $namespacePresent -eq 0 ]
         then
-            echo `kubectl create namespace azureakspocb57d`
+            echo `kubectl create namespace ryoshigademoapi`
         fi
 
     - uses: azure/k8s-create-secret@v1
       with:
-        namespace: azureakspocb57d
+        namespace: ryoshigademoapi
         container-registry-url: ryoshiga.azurecr.io
         container-registry-username: ${{ secrets.acr_ryoshiga_username }}
         container-registry-password: ${{ secrets.acr_ryoshiga_password }}
@@ -40,10 +40,10 @@ jobs:
        
     - uses: azure/k8s-deploy@v1
       with:
-        namespace: azureakspocb57d
+        namespace: ryoshigademoapi
         manifests: |
           manifests/deployment.yml
           manifests/service.yml
         images: |
-          ryoshiga.azurecr.io/azureakspoc:${{ github.sha }}
+          ryoshiga.azurecr.io/ryoshigademoapi:${{ github.sha }}
         imagepullsecrets: azureakspocdockerauth
